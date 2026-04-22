@@ -1,6 +1,4 @@
-# Gestión Universitaria - Dashboard de Estadísticas y Procesamiento de Datos
-
-Este repositorio contiene la primera evidencia de aprendizaje para el módulo que integra las materias **Procesamiento de Datos** y **Estadística y Exploración de Datos 1**.
+# Gestión Universitaria
 
 ## 🚀 Visión del Proyecto: Seguimiento Académico-Laboral
 
@@ -25,7 +23,6 @@ Esta desconexión genera escasez de estrategias políticas y decisiones de merca
     3.  **Shirley Frassa** - GitHub: `sfrassa` - Email: `slfrassa@gmail.com`
     4.  **Gabriel Yoles Trucco** - GitHub: `gyoles` - Email: `gyoles96@gmail.com`
     5.  **Fabricio Cocconi** - GitHub: `Fabricio-Cocconi` - Email: `fabriciococconi@gmail.com`
-    6.  [Pendiente]
 
 ---
 
@@ -55,6 +52,6 @@ La carpeta `/Datos` contiene el dataset principal en formato `.CSV` y su respect
 ---
 
 ## 🛠️ Tecnologías Utilizadas
-- **Python / R** (para procesamiento y estadística)
+- **Python** (para procesamiento y estadística)
 - **Git / GitHub** (control de versiones)
 - **Markdown** (documentación)
