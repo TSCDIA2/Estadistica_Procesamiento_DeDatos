@@ -3,78 +3,276 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entrega Evidencia 1 - ISPC</title>
+    <title>Evidencia 1 - Estadística y Procesamiento de Datos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 40px auto; padding: 20px; border: 1px solid #eee; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-        .header { text-align: center; border-bottom: 2px solid #2c3e50; padding-bottom: 20px; margin-bottom: 30px; }
-        .header h1 { margin: 0; color: #2c3e50; font-size: 24px; }
-        .header p { margin: 5px 0; color: #7f8c8d; }
-        .section { margin-bottom: 25px; }
-        .section h2 { font-size: 18px; color: #2980b9; border-left: 4px solid #2980b9; padding-left: 10px; margin-bottom: 15px; }
-        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
-        th { background-color: #f9f9f9; color: #2c3e50; }
-        .repo-link { background: #f4f7f6; padding: 15px; border-radius: 5px; word-break: break-all; font-family: monospace; }
-        .footer { margin-top: 50px; text-align: center; font-size: 12px; color: #95a5a6; border-top: 1px solid #eee; padding-top: 20px; }
+        :root {
+            --primary-color: #1a4b6b;
+            --secondary-color: #2b7a0b;
+            --text-main: #2d3748;
+            --border-color: #e2e8f0;
+            --bg-light: #f8fafc;
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #cbd5e1;
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            background: white;
+            margin: 0 auto;
+            padding: 25mm;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 30px;
+            margin-bottom: 40px;
+        }
+
+        .institute {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .subject {
+            font-size: 18px;
+            font-weight: 500;
+            color: #4a5568;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 20px;
+            color: #1a202c;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: left;
+            padding: 12px 15px;
+            font-weight: 500;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        tr:nth-child(even) {
+            background-color: var(--bg-light);
+        }
+
+        .repo-box {
+            background-color: var(--bg-light);
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 0 4px 4px 0;
+            word-break: break-all;
+        }
+
+        .repo-box a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .repo-box a:hover {
+            text-decoration: underline;
+        }
+
+        .dataset-info {
+            background-color: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            padding: 20px;
+            border-radius: 6px;
+        }
+
+        .dataset-info p {
+            margin-top: 0;
+            line-height: 1.6;
+        }
+
+        .variables-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            padding-left: 20px;
+            font-size: 14px;
+        }
+
+        .variables-list li span {
+            color: #64748b;
+            font-style: italic;
+            font-size: 13px;
+        }
+
+        .print-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--primary-color);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: background 0.3s;
+            z-index: 1000;
+        }
+
+        .print-btn:hover {
+            background: #113247;
+        }
+
+        @media print {
+            body { background: none; padding: 0; }
+            .page { margin: 0; box-shadow: none; border: none; width: 100%; }
+            .print-btn { display: none; }
+        }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>Evidencia de Aprendizaje N° 1</h1>
-        <p>Procesamiento de Datos | Estadística y Exploración de Datos 1</p>
-        <p><strong>ISPC - 2026</strong></p>
-    </div>
 
-    <div class="section">
-        <h2>Información del Grupo</h2>
-        <p><strong>Nombre del Grupo:</strong> Undefined</p>
-    </div>
+    <button class="print-btn" onclick="window.print()">🖨️ GENERAR PDF</button>
 
-    <div class="section">
-        <h2>Integrantes del Proyecto</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Nombre Completo</th>
-                    <th>Correo Electrónico</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Franco Arce</td>
-                    <td>Francogonzaloarce@gmail.com</td>
-                </tr>
-                <tr>
-                    <td>Yanina Roldán</td>
-                    <td>yanina88roldan@gmail.com</td>
-                </tr>
-                <tr>
-                    <td>Shirley Frassa</td>
-                    <td>slfrassa@gmail.com</td>
-                </tr>
-                <tr>
-                    <td>Gabriel Yoles Trucco</td>
-                    <td>gyoles96@gmail.com</td>
-                </tr>
-                <tr>
-                    <td>Fabricio Cocconi</td>
-                    <td>fabriciococconi@gmail.com</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="section">
-        <h2>Enlace al Repositorio</h2>
-        <div class="repo-link">
-            <a href="https://github.com/TSCDIA2/Gestion-Universitaria" target="_blank">
-                https://github.com/TSCDIA2/Gestion-Universitaria
-            </a>
+    <div class="page">
+        
+        <div class="header">
+            <div class="institute">Instituto Superior Politécnico Córdoba (ISPC)</div>
+            <div class="subject">Estadística y Exploración de Datos 1 / Procesamiento de Datos</div>
+            <div class="title">Evidencia de Aprendizaje N° 1</div>
         </div>
+
+        <div class="section">
+            <div class="section-title">1. Información del Equipo de Trabajo</div>
+            <p><strong>Grupo:</strong> Undefined</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre Completo</th>
+                        <th>Correo Electrónico</th>
+                        <th>Usuario GitHub</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Franco Arce</td>
+                        <td>Francogonzaloarce@gmail.com</td>
+                        <td>Franco-Arce</td>
+                    </tr>
+                    <tr>
+                        <td>Yanina Roldán</td>
+                        <td>yanina88roldan@gmail.com</td>
+                        <td><i>No especificado</i></td>
+                    </tr>
+                    <tr>
+                        <td>Shirley Frassa</td>
+                        <td>slfrassa@gmail.com</td>
+                        <td>sfrassa</td>
+                    </tr>
+                    <tr>
+                        <td>Gabriel Yoles Trucco</td>
+                        <td>gyoles96@gmail.com</td>
+                        <td>gyoles</td>
+                    </tr>
+                    <tr>
+                        <td>Fabricio Cocconi</td>
+                        <td>fabriciococconi@gmail.com</td>
+                        <td>Fabricio-Cocconi</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="font-size: 12px; color: #718096; margin-top: 10px;">* El documento cumple con la entrega formal exigida por la cátedra para el Proyecto Integrador.</p>
+        </div>
+
+        <div class="section">
+            <div class="section-title">2. Enlace al Repositorio (GitHub)</div>
+            <p>En el siguiente repositorio se aloja un contexto de la Problemática del Proyecto Orientada a evaluar el impacto y la inserción laboral de los graduados universitarios, junto con el conjunto de datos requerido.</p>
+            <div class="repo-box">
+                <a href="https://github.com/TSCDIA2/Estadistica_Procesamiento_DeDatos" target="_blank">
+                    https://github.com/TSCDIA2/Estadistica_Procesamiento_DeDatos
+                </a>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">3. Dataset Propuesto</div>
+            
+            <div class="dataset-info">
+                <p><strong>Cumplimiento de Requisitos:</strong> Se ha documentado en la carpeta <code>Datos/</code> el archivo <code>base_araucano.csv</code> acompañado de su respectivo <code>diccionario.xlsx</code>.</p>
+                
+                <p>El dataset cumple de forma superadora las condiciones solicitadas:</p>
+                <ul style="margin-bottom: 20px;">
+                    <li><strong>Formato:</strong> .CSV (Microdatos reales).</li>
+                    <li><strong>Registros:</strong> Más de 820.000 registros totales, garantizando la rigurosidad estadística.</li>
+                    <li><strong>Variables:</strong> 13 variables de interés, integrando métricas demográficas, académicas y económicas continuas (salario) relevantes para analizar la inserción ocupacional de graduados (SIPA/Araucano).</li>
+                </ul>
+
+                <p><strong>Detalle de Variables Clave del Dataset:</strong></p>
+                <ul class="variables-list">
+                    <li>id <span>(Identificador individual)</span></li>
+                    <li>rama_id <span>(Cualitativa Nominal - Rama del conocimiento)</span></li>
+                    <li>disciplina_id <span>(Cualitativa Nominal - Disciplina académica)</span></li>
+                    <li>gestion_id <span>(Cualitativa Nominal - Gestión pública o privada)</span></li>
+                    <li>genero_id <span>(Cualitativa Nominal - Género del graduado)</span></li>
+                    <li>tamaño_id <span>(Cualitativa Ordinal - Empleador SIPA)</span></li>
+                    <li>letra_id <span>(Cualitativa Nominal - Sector Empleador)</span></li>
+                    <li>salario <span>(Cuantitativa Continua - Salario en pesos)</span></li>
+                    <li>anio <span>(Cuantitativa Discreta - Año observación)</span></li>
+                    <li>anioegreso <span>(Cuantitativa Discreta - Año egreso)</span></li>
+                    <li>anionac <span>(Cuantitativa Discreta - Año nacimiento)</span></li>
+                </ul>
+            </div>
+        </div>
+
     </div>
 
-    <div class="footer">
-        <p>Este documento fue generado para la entrega formal de la primera evidencia de aprendizaje.</p>
-    </div>
 </body>
 </html>

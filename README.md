@@ -1,17 +1,19 @@
-# Gestión Universitaria
+# Gestión Universitaria - Dashboard de Estadísticas y Procesamiento de Datos
 
-## 🚀 Vision del Proyecto: Universidad Privada
+Este repositorio contiene la primera evidencia de aprendizaje para el módulo que integra las materias **Procesamiento de Datos** y **Estadística y Exploración de Datos 1**.
 
-El proyecto surge de la necesidad de optimizar la gestión académica y financiera de los estudiantes en un entorno de educación privada. El "Pain Point" identificado se centra en la **impracticidad e ineficiencia** en el seguimiento de actividades críticas, lo que genera fricciones tanto administrativas como económicas para el estudiantado.
+## 🚀 Visión del Proyecto: Seguimiento Académico-Laboral
 
-### 🚩 Problemática (Pain Point)
-Los alumnos enfrentan dificultades para mantenerse al día con:
-- Pago de cuotas y matrículas.
-- Inscripción a materias y mesas de examen.
-- Elección de turnos y comisiones.
-- Entrega de actividades evaluables.
+El proyecto surge de la necesidad de optimizar y medir el éxito de trayectorias universitarias cruzando información académica con datos de empleo del mundo real (formal). El objetivo principal es poder hacer ciencia de datos sobre la vinculación de estudios superiores y mercado de trabajo.
 
-La ausencia de un sistema de notificaciones proactivo deriva en recargos por mora y pérdida de oportunidades académicas.
+### 🚩 Problemática
+Existe dificultad por parte de universidades y entes gubernamentales para entender y predecir:
+- ¿Cuáles carreras tienen mejor o peor inserción en el sector privado?
+- ¿Qué nivel salarial en blanco alcanzan recién egresados según rama de estudio?
+- ¿Existe brecha salarial por género en los profesionales entre 2 y 4 años de egreso?
+- ¿Qué tamaño de empresa absorbe a los distintos perfiles de graduados?
+
+Esta desconexión genera escasez de estrategias políticas y decisiones de mercado informadas por datos empíricos.
 
 ---
 
@@ -19,34 +21,40 @@ La ausencia de un sistema de notificaciones proactivo deriva en recargos por mor
 *   **Nombre del Grupo:** Undefined
 *   **Integrantes:**
     1.  **Franco Arce** - GitHub: `Franco-Arce` - Email: `Francogonzaloarce@gmail.com`
-    2.  **Yanina Roldán** - GitHub: `YaninaRoldan` - Email: `yanina88roldan@gmail.com`
+    2.  **Yanina Roldán** - Email: `yanina88roldan@gmail.com`
     3.  **Shirley Frassa** - GitHub: `sfrassa` - Email: `slfrassa@gmail.com`
     4.  **Gabriel Yoles Trucco** - GitHub: `gyoles` - Email: `gyoles96@gmail.com`
     5.  **Fabricio Cocconi** - GitHub: `Fabricio-Cocconi` - Email: `fabriciococconi@gmail.com`
+    6.  [Pendiente]
+
+---
+
+## 📋 Historias de Usuario (Backlog Inicial)
+
+| Prioridad | Historia de Usuario | Descripción |
+| :--- | :--- | :--- |
+| **Alta** | Modelo Predictivo Salarial | Desarrollar un modelo que prediga el sueldo esperado según disciplina académica. |
+| **Media** | Perfilado de Retención del Talento | Entender mediante clústers los perfiles de graduados que ingresan a grandes empresas Vs PyMEs. |
+| **Baja** | Dashboard Tasa de Empleo | Generar un tablero con la evolución de la ocupación salarial de egresados de 2016-2018. |
 
 ---
 
 ## 📊 Datos
-La carpeta `/Datos` contiene el dataset principal en formato `.CSV` con la información necesaria para el análisis estadístico y procesamiento de datos.
+La carpeta `/Datos` contiene el dataset principal en formato `.CSV` y su respectivo archivo Excel de metadatos (Diccionario) provistos por el CEP XXI.
 
 ### Características del Dataset:
-- **Formato:** `.CSV` (disponible en `Datos/dataset_universidad.csv`)
-- **Registros:** 500
-- **Variables:**
-    1. `id_alumno`: Identificador único.
-    2. `nombre_completo`: Nombre y apellido ficticio.
-    3. `carrera`: Carrera que cursa (Ingeniería, Licenciatura, etc.).
-    4. `anio_ingreso`: Año de matriculación inicial.
-    5. `cuotas_pendientes`: Cantidad de meses adeudados (0 a 12).
-    6. `monto_deuda`: Deuda total calculada (cuotas * valor base).
-    7. `promedio_general`: Promedio académico actual.
-    8. `materias_aprobadas`: Cantidad de materias aprobadas a la fecha.
-    9. `estado_alumno`: Situación académica (Regular, Libre, Suspendido).
-    10. `notificacion_activa`: Si el alumno tiene habilitadas las alertas en la APP.
+- **Archivo:** `base_araucano.csv` (Microdatos)
+- **Registros:** > 820.000 (cruce Araucano-SIPA)
+- **Variables Críticas Analizadas:**
+    1. `disciplina_id`: Rama específica de la carrera.
+    2. `gestion_id`: Ámbito académico (Público vs Privado).
+    3. `genero_id`: Sexo biológico del graduado.
+    4. `salario`: Nivel de ingresos en pesos (cuantitativa continua).
+    5. `tamaño_id` y `letra_id`: Magnitud y sector de la empresa contratante.
 
 ---
 
 ## 🛠️ Tecnologías Utilizadas
-- **Python** (para procesamiento y estadística)
+- **Python / R** (para procesamiento y estadística)
 - **Git / GitHub** (control de versiones)
 - **Markdown** (documentación)
