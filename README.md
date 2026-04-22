@@ -1,6 +1,4 @@
-# Gestión Universitaria - Dashboard de Estadísticas y Procesamiento de Datos
-
-Este repositorio contiene la primera evidencia de aprendizaje para el módulo que integra las materias **Procesamiento de Datos** y **Estadística y Exploración de Datos 1**.
+# Gestión Universitaria
 
 ## 🚀 Vision del Proyecto: Universidad Privada
 
@@ -21,21 +19,10 @@ La ausencia de un sistema de notificaciones proactivo deriva en recargos por mor
 *   **Nombre del Grupo:** Undefined
 *   **Integrantes:**
     1.  **Franco Arce** - GitHub: `Franco-Arce` - Email: `Francogonzaloarce@gmail.com`
-    2.  **Yanina Roldán** - Email: `yanina88roldan@gmail.com`
-    3.  **Shirley Frassa** - Email: `slfrassa@gmail.com`
-    4.  **Gabriel Yoles Trucco** - Email: `gyoles96@gmail.com`
-    5.  **Fabricio Cocconi** - Email: `fabriciococconi@gmail.com`
-    6.  [Pendiente]
-
----
-
-## 📋 Historias de Usuario (Backlog Inicial)
-
-| Prioridad | Historia de Usuario | Descripción |
-| :--- | :--- | :--- |
-| **Alta** | Alerta de Vencimiento de Cuotas | Notificaciones 10 días y 1 día antes del vencimiento. |
-| **Media** | Notificación Mesas Finales | Alerta automática 15 días antes del inicio de exámenes. |
-| **Baja** | Recordatorio Actividades | Alerta 3 días antes del vencimiento de entregables. |
+    2.  **Yanina Roldán** - GitHub: `` - Email: `yanina88roldan@gmail.com`
+    3.  **Shirley Frassa** - GitHub: `sfrassa` - Email: `slfrassa@gmail.com`
+    4.  **Gabriel Yoles Trucco** - GitHub: `gyoles` - Email: `gyoles96@gmail.com`
+    5.  **Fabricio Cocconi** - GitHub: `Fabricio-Cocconi` - Email: `fabriciococconi@gmail.com`
 
 ---
 
@@ -60,6 +47,6 @@ La carpeta `/Datos` contiene el dataset principal en formato `.CSV` con la infor
 ---
 
 ## 🛠️ Tecnologías Utilizadas
-- **Python / R** (para procesamiento y estadística)
+- **Python** (para procesamiento y estadística)
 - **Git / GitHub** (control de versiones)
 - **Markdown** (documentación)
