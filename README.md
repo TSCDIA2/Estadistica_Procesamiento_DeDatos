@@ -19,7 +19,7 @@ Esta desconexión genera escasez de estrategias políticas y decisiones de merca
 *   **Nombre del Grupo:** Undefined
 *   **Integrantes:**
     1.  **Franco Arce** - GitHub: `Franco-Arce` - Email: `Francogonzaloarce@gmail.com`
-    2.  **Yanina Roldán** - Email: `yanina88roldan@gmail.com`
+    2.  **Yanina Roldán** - GitHub: `YaninaRoldan` - Email: `yanina88roldan@gmail.com`
     3.  **Shirley Frassa** - GitHub: `sfrassa` - Email: `slfrassa@gmail.com`
     4.  **Gabriel Yoles Trucco** - GitHub: `gyoles` - Email: `gyoles96@gmail.com`
     5.  **Fabricio Cocconi** - GitHub: `Fabricio-Cocconi` - Email: `fabriciococconi@gmail.com`
